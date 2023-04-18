@@ -1,32 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ISS APP</title>
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.css" rel="stylesheet">
-<script src="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.js"></script>
-<style>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            color: white;
+        }
 
-body { margin: 0; padding: 0; color: white;}
-#map { position: absolute; top: 0; bottom: 0; width: 100%; z-index: -1;}
+        h1{
+            text-align: center;
+            text-transform: uppercase;
+        }
+        .data{
+            margin: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 75%;
+            z-index: -1;
+        }
 
-    .marker {
-        display: block;
-        border: none;
-        border-radius: 50%;
-        cursor: pointer;
-        padding: 0;
-    }
+        .marker {
+            display: block;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        @media only screen and (max-width: 600px) {
+  .data {
+    display: flex;
+    align-items: left;
+  }
+}
     </style>
 </head>
+
 <body>
     <h1>Where is the ISS</h1>
-    <p>latitude: <span  id="lat"></span><br/></p>
-    <p>longitude: <span  id="long"></span></p>
-    <p>Velocity: <span  id="velocity"></span></p>
+    <div class="data">
+        <p>latitude: <span id="lat"></span><br /></p>
+        <p>longitude: <span id="long"></span></p>
+        <p>Velocity: <span id="velocity"></span></p>
+    </div>
     <div id="map"></div>
 </body>
 <script src="iss_data.js"></script>
+
 </html>
