@@ -9,6 +9,8 @@ const map = new mapboxgl.Map({
 });
 
 map.on("load", async () => {
+  // Function to add responsiveness
+  map.resize();  
   // Get the initial location of the International Space Station (ISS).
   const geojson = await getLocation();
   // Add the ISS location as a source.
@@ -78,6 +80,11 @@ map.on("load", async () => {
         features: [
           {
             type: "Feature",
+            'properties': {
+                'message': `<p>latitude: ${latitude} <br /></p>
+                <p>longitude: ${longitude} </p>
+                <p>Velocity: ${velocity} </p>`,
+                },
             geometry: {
               type: "Point",
               coordinates: [longitude, latitude],

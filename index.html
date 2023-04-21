@@ -23,14 +23,14 @@
             margin: 40px;
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: space-around;
             flex-wrap: wrap;
         }
         #map {
             position: absolute;
             top: 0;
             bottom: 0;
-            width: 75%;
+            width: 100%;
             z-index: -1;
         }
 
@@ -41,12 +41,22 @@
             cursor: pointer;
             padding: 0;
         }
+        .map_container{
+            position: relative;
+        }
+        .mapboxgl-map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    }
 
         @media only screen and (max-width: 600px) {
   .data {
     display: flex;
     align-items: left;
   }
+  
 }
     </style>
 </head>
@@ -58,7 +68,9 @@
         <p>longitude: <span id="long"></span></p>
         <p>Velocity: <span id="velocity"></span></p>
     </div>
+   <div class="map_conatiner">
     <div id="map"></div>
+   </div>
 </body>
 <script src="iss_data.js"></script>
 
